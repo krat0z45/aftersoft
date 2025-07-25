@@ -1,0 +1,74 @@
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 20px),
+                      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+    background-size: 600px 600px, 400px 400px;
+    background-position: 0 0, 40px 60px;
+    animation: move-stars 200s linear infinite;
+  }
+  
+  @keyframes move-stars {
+    from {background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;}
+    to {background-position: -5000px 2500px, -5000px 2500px, -5000px 2500px, -5000px 2500px;}
+  }
+  
+  
+  @keyframes meteor-animation {
+      0% {
+          opacity: 1;
+          transform: translate(0, 0);
+      }
+      10% {
+        opacity: 0;
+      }
+      10.01% {
+          transform: translate(calc(-1 * (100vw + 200px)), calc(100vh + 200px));
+          opacity: 0;
+      }
+      100% {
+        transform: translate(calc(-1 * (100vw + 200px)), calc(100vh + 200px));
+        opacity: 0;
+      }
+  }
+  
+  .meteor {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 2px 0.2px hsl(var(--purple));
+      animation: meteor-animation 10s linear infinite;
+  }
+  
+  .meteor::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 1.5px;
+      background: linear-gradient(to left, transparent 0%, hsl(var(--primary)) 100%);
+      transform: rotate(-45deg) translate(-100px, 1px);
+      transform-origin: right;
+  }
+  
+  .meteor-1 { top: 10%; left: 40%; animation-delay: 0s; }
+  .meteor-2 { top: 30%; left: 80%; animation-delay: 2.5s; }
+  .meteor-3 { top: 5%; left: 10%; animation-delay: 5.7s; }
+  .meteor-4 { top: 60%; left: 60%; animation-delay: 8.1s; }
