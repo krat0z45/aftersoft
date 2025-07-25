@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 interface Meteor {
@@ -13,10 +14,14 @@ interface Meteor {
 
 export default function Meteors() {
   const [meteors, setMeteors] = useState<Meteor[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
     const generateMeteors = () => {
-      const isMobile = window.innerWidth < 768;
       const meteorCount = isMobile ? 5 : 15;
       const newMeteors = Array.from({ length: meteorCount }).map((_, i) => ({
         id: i,
@@ -28,20 +33,31 @@ export default function Meteors() {
       }));
       setMeteors(newMeteors);
     };
-
+    
+    checkDevice();
     generateMeteors();
-    window.addEventListener("resize", generateMeteors);
+
+    window.addEventListener("resize", () => {
+        checkDevice();
+        generateMeteors();
+    });
     
     return () => {
-        window.removeEventListener("resize", generateMeteors);
+        window.removeEventListener("resize", () => {
+            checkDevice();
+            generateMeteors();
+        });
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
         {/* Stars */}
         <div 
-            className="absolute inset-0 bg-repeat"
+            className={cn(
+                "absolute inset-0 bg-repeat",
+                isMobile ? "hidden" : "block"
+            )}
             style={{
                 backgroundImage: 
                     "radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 20px)," +
