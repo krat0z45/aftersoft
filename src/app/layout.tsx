@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "font-body antialiased bg-background text-foreground"
+          "font-body antialiased bg-background text-foreground overflow-x-hidden",
         )}
       >
         <ThemeProvider
