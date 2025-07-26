@@ -5,7 +5,7 @@ import Meteors from "@/components/effects/meteors";
 export function HeroSection() {
   return (
     <section id="home" className="relative h-[85vh] min-h-[600px] w-full">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <Meteors />
         <div className="header-glow" />
       </div>
@@ -19,7 +19,7 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg" className="font-bold btn-glow">
-              <Link href="#why-us">Ver Mi Trabajo</Link>
+              <Link href="#portfolio">Ver Mi Trabajo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="font-bold">
               <Link href="#contact">Contáctame</Link>
