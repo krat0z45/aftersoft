@@ -48,16 +48,25 @@
 }
  
 @layer base {
+  /* Añadido max-width y overflow-x para prevenir desbordamiento */
   html {
+    max-width: 100vw;
+    overflow-x: hidden;
     scroll-behavior: smooth;
   }
+  
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    @apply bg-background text-foreground;
+  }
+  
+  /* Añadido para todos los elementos */
   * {
     @apply border-border;
+    max-width: 100%;
   }
-  body {
-    @apply bg-background text-foreground;
-    overflow-x: hidden;
-  }
+  
   section {
     @apply py-16 md:py-24;
   }
@@ -102,7 +111,6 @@
 .dark .header-glow::before {
     background: radial-gradient(circle, hsla(var(--primary) / 0.4) 0%, hsla(var(--primary) / 0) 70%);
 }
-
 
 @keyframes pulse-glow {
   0% { transform: scale(0.8); opacity: 0.5; }
