@@ -37,16 +37,15 @@ export default function Meteors() {
     checkDevice();
     generateMeteors();
 
-    window.addEventListener("resize", () => {
-        checkDevice();
-        generateMeteors();
-    });
+    const handleResize = () => {
+      checkDevice();
+      generateMeteors();
+    };
+
+    window.addEventListener("resize", handleResize);
     
     return () => {
-        window.removeEventListener("resize", () => {
-            checkDevice();
-            generateMeteors();
-        });
+      window.removeEventListener("resize", handleResize);
     }
   }, [isMobile]);
 
