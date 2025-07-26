@@ -137,7 +137,7 @@ function HeroSection() {
         className: "relative h-[85vh] min-h-[600px] w-full",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 -z-10",
+                className: "absolute inset-0 -z-10 overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$effects$2f$meteors$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/components/sections/hero.tsx",
@@ -193,7 +193,7 @@ function HeroSection() {
                                     size: "lg",
                                     className: "font-bold btn-glow",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "#why-us",
+                                        href: "#portfolio",
                                         children: "Ver Mi Trabajo"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/hero.tsx",
@@ -429,7 +429,7 @@ const projects = [
     {
         title: "CRM Cósmico",
         description: "Un tablero de CRM futurista para gestionar las relaciones con los clientes en toda la galaxia.",
-        image: "https://placehold.co/600x400.png",
+        image: "/img/viaje1.jpg",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -440,7 +440,7 @@ const projects = [
     {
         title: "E-commerce Stargate",
         description: "Una tienda en línea para artefactos raros, con una experiencia de pago sin interrupciones.",
-        image: "https://placehold.co/600x400.png",
+        image: "/img/viaje2.webp",
         tags: [
             "Shopify",
             "React",
@@ -451,7 +451,7 @@ const projects = [
     {
         title: "Astro Landing",
         description: "Una página de aterrizaje elegante y animada para el lanzamiento de un nuevo producto SaaS.",
-        image: "https://placehold.co/600x400.png",
+        image: "/img/viaje3.jpg",
         tags: [
             "Astro",
             "GSAP",

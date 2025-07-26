@@ -35,8 +35,8 @@ function Meteors() {
                     }).map({
                         "Meteors.useEffect.generateMeteors.newMeteors": (_, i)=>({
                                 id: i,
-                                x: `${Math.random() * 100}vw`,
-                                y: `${Math.random() * 100}vh`,
+                                x: `${Math.random() * 90}vw`,
+                                y: `${Math.random() * 90}vh`,
                                 size: Math.random() * 0.7 + 0.6,
                                 duration: Math.random() * 2 + 1,
                                 delay: Math.random() * 3
@@ -76,7 +76,7 @@ function Meteors() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/effects/meteors.tsx",
-                lineNumber: 56,
+                lineNumber: 55,
                 columnNumber: 9
             }, this),
             meteors.map((meteor)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -84,17 +84,19 @@ function Meteors() {
                     style: {
                         top: meteor.y,
                         left: meteor.x,
-                        width: `${meteor.size * 100}px`,
+                        width: `${meteor.size * 80}px`,
                         animationDelay: `${meteor.delay}s`,
                         animationDuration: `${meteor.duration}s`,
                         boxShadow: '0 0 5px rgba(0, 168, 255, 0.3)',
-                        // Propiedades para evitar desbordamiento en móviles
-                        maxWidth: '100vw',
-                        boxSizing: 'border-box'
+                        maxWidth: '90vw',
+                        maxHeight: '90vh',
+                        boxSizing: 'border-box',
+                        right: 'auto',
+                        bottom: 'auto'
                     }
                 }, meteor.id, false, {
                     fileName: "[project]/src/components/effects/meteors.tsx",
-                    lineNumber: 73,
+                    lineNumber: 72,
                     columnNumber: 13
                 }, this))
         ]
