@@ -50,7 +50,8 @@ export default function Meteors() {
   }, [isMobile]);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
+    <div className="fixed top-0 left-0 w-screen h-full pointer-events-none z-[-1] overflow-hidden">
+      
         {/* Stars */}
         <div 
             className={cn(
