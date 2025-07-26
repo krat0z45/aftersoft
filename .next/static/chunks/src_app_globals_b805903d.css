@@ -749,6 +749,10 @@ section {
   height: 1px;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-svh {
   height: 100svh;
 }
@@ -863,6 +867,10 @@ section {
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .min-w-0 {

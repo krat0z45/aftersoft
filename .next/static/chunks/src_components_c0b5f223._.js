@@ -35,8 +35,8 @@ function Meteors() {
                     }).map({
                         "Meteors.useEffect.generateMeteors.newMeteors": (_, i)=>({
                                 id: i,
-                                x: `${Math.floor(Math.random() * 200 - 100)}vw`,
-                                y: `${Math.floor(Math.random() * 200 - 100)}vh`,
+                                x: `${Math.random() * 100}vw`,
+                                y: `${Math.random() * 100}vh`,
                                 size: Math.random() * 0.7 + 0.6,
                                 duration: Math.random() * 2 + 1,
                                 delay: Math.random() * 3
@@ -64,7 +64,7 @@ function Meteors() {
         isMobile
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden",
+        className: "fixed top-0 left-0 w-screen h-screen pointer-events-none z-[-1] overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("absolute inset-0 bg-repeat", isMobile ? "hidden" : "block"),
@@ -76,7 +76,7 @@ function Meteors() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/effects/meteors.tsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 9
             }, this),
             meteors.map((meteor)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -84,14 +84,17 @@ function Meteors() {
                     style: {
                         top: meteor.y,
                         left: meteor.x,
-                        width: `${meteor.size * 150}px`,
+                        width: `${meteor.size * 100}px`,
                         animationDelay: `${meteor.delay}s`,
                         animationDuration: `${meteor.duration}s`,
-                        boxShadow: '0 0 5px rgba(0, 168, 255, 0.3)'
+                        boxShadow: '0 0 5px rgba(0, 168, 255, 0.3)',
+                        // Propiedades para evitar desbordamiento en móviles
+                        maxWidth: '100vw',
+                        boxSizing: 'border-box'
                     }
                 }, meteor.id, false, {
                     fileName: "[project]/src/components/effects/meteors.tsx",
-                    lineNumber: 72,
+                    lineNumber: 73,
                     columnNumber: 13
                 }, this))
         ]
