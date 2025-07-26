@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-30 w-full transition-all duration-300", // Reducido z-index
         isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50" : "bg-transparent"
       )}
     >
@@ -62,7 +62,7 @@ export function Header() {
       
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 top-20 z-40 bg-background/95 backdrop-blur-lg md:hidden"
+          className="fixed inset-0 top-20 z-20 bg-background/95 backdrop-blur-lg md:hidden" // Reducido z-index
           onClick={closeMenu}
         >
           <nav className="container mx-auto flex flex-col items-center gap-4 px-4 pt-8">

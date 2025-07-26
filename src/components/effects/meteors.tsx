@@ -25,8 +25,8 @@ export default function Meteors() {
       const meteorCount = isMobile ? 5 : 15;
       const newMeteors = Array.from({ length: meteorCount }).map((_, i) => ({
         id: i,
-        x: `${Math.floor(Math.random() * 200 - 100)}vw`,
-        y: `${Math.floor(Math.random() * 200 - 100)}vh`,
+        x: `${Math.random() * 90}vw`, // Cambiado para evitar desbordamiento
+        y: `${Math.random() * 90}vh`, // Cambiado para evitar desbordamiento
         size: Math.random() * 0.7 + 0.6,
         duration: Math.random() * 2 + 1,
         delay: Math.random() * 3
@@ -75,10 +75,15 @@ export default function Meteors() {
             style={{
                 top: meteor.y,
                 left: meteor.x,
-                width: `${meteor.size * 150}px`,
+                width: `${meteor.size * 80}px`, // Reducido para móviles
                 animationDelay: `${meteor.delay}s`,
                 animationDuration: `${meteor.duration}s`,
                 boxShadow: '0 0 5px rgba(0, 168, 255, 0.3)',
+                maxWidth: '90vw', // Limita ancho máximo
+                maxHeight: '90vh', // Limita alto máximo
+                boxSizing: 'border-box',
+                right: 'auto',
+                bottom: 'auto',
             }}
             />
         ))}
