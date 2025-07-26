@@ -62,10 +62,10 @@ export function Header() {
       
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 top-20 z-20 bg-background/95 backdrop-blur-lg md:hidden" // Reducido z-index
+          className="fixed inset-0 top-20 z-20 bg-background/95 backdrop-blur-lg md:hidden w-full overflow-x-hidden"
           onClick={closeMenu}
         >
-          <nav className="container mx-auto flex flex-col items-center gap-4 px-4 pt-8">
+          <nav className="flex flex-col items-center gap-4 px-4 pt-8 w-full max-w-full">
             {navLinks.map((link) => (
                 <Link
                   key={link.href}
